@@ -1,5 +1,6 @@
 <template>
-    <div>       
+    <div>  
+        <el-card>我是{{aa}}</el-card>     
         <el-button type="primary" @click="onChangedParsent">父组件</el-button>
         <el-button type="primary" @click="onChangedemitter">nodeEvent</el-button>
     </div>
@@ -12,12 +13,18 @@
         data () {
            return {
                count: 0,
-           } 
+           }
         },
-        mounted () {
-            console.log(emitter);
+        props: ['aa'],
+        mounted: function () {
+            console.log( emitter );
+        },
+        updated() {
+            console.log('我是aa');
         },
         methods: {
+
+
             onChangedParsent() {
                 this.count++;
                 let count = this.count;

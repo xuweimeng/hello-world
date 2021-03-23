@@ -1,22 +1,40 @@
 <template>
   <div id="app">
-    App
+    <el-button @click="setAa" >发送</el-button>
+    {{aa}}
+    <parsent :aa="b"></parsent>
+    <!-- App
     <parsent></parsent>
     <br>
-    <child></child>
+    <child></child> -->
 
+    <!-- <hello-world></hello-world> -->
   </div>
 </template>
 
 <script>
 import Parsent from '@/containers/Parsent';
-import Child from '@/containers/Child';
+// import Child from '@/containers/Child';
+// import HelloWorld from '@/components/HelloWorld';
 export default {
   name: 'App',
+  data() {
+    return{
+      aa: 1, 
+      b:2
+    }
+  },
   components: {
     Parsent,
-    Child
+    // Child,
+    // HelloWorld
+  },
+  methods: {
+    setAa() {
+      this.aa++
+    }
   }
+
 }
 </script>
 
